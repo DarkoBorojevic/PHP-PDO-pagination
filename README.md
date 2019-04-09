@@ -1,10 +1,10 @@
 <h1>PHP-PDO pagination</h1>
 <hr>
-<p>Php-built pagination with PDO</p>
+<p>
+	You don't have to use PDO here, but I did. This is an example of a basic PDO connection where you have to rename the 'pagination' database to whatever your database name is. Source folder contains an 'articles' table .sql file which you import into the database and voila, that is it.
+</p>
 
-```html
-<form action="https://formspree.io/you@email.com">
-    <input type="text" name="name">
-</form>
+```php
+$db = new PDO('mysql:dbname=pagination;host=127.0.0.1','root','');
 ```
 

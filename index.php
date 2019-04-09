@@ -16,7 +16,7 @@ $pages = ceil($total / $perPage);
 
 ?>
 
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -27,46 +27,40 @@ $pages = ceil($total / $perPage);
 		<!--custom css-->
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<title>
-			php pagination
+		php pagination
 		</title>
 	</head>
 	<body>
-	<div class="container">
-
-		<div class="col-md-12">
-			<?php foreach ($articles as $article): ?>
+		<div class="container">
+			<div class="col-md-12">
+				<?php foreach ($articles as $article): ?>
 				<div class="article">
 					<p class="lead">
-						<?php 
-							echo $article['id']; ?>: <?php echo $article['title']; 
+						<?php
+						echo $article['id']; ?>: <?php echo $article['title'];
 						?>
 					</p>
 				</div>
-			<?php endforeach ?>
-		</div>
-
-		<div class="col-md-12">
-			<div class="well well-sm">
-				
-				<div class="paginate">
-					<?php for ($x=1; $x <= $pages; $x++): ?>
-						
-							<ul class="pagination">
-								<li>
-									<a href="?page=<?php echo $x; ?>&per-page=<?php echo $perPage; ?>">
-										<?php 
-											echo $x;
-										?>
-									</a>
-								</li>
-							</ul>
-						
-					<?php endfor; ?>
-				</div>
-				
+				<?php endforeach ?>
 			</div>
-		</div>
-
-	</div><!--end main container-->
+			<div class="col-md-12">
+				<div class="well well-sm">
+					<div class="paginate">
+						<?php for ($x=1; $x <= $pages; $x++): ?>
+						<ul class="pagination">
+							<li>
+								<a href="?page=<?php echo $x; ?>&per-page=<?php echo $perPage; ?>">
+									<?php
+										echo $x;
+									?>
+								</a>
+							</li>
+						</ul>
+						<?php endfor; ?>
+					</div>
+				</div>
+			</div>
+		</div><!--end main container-->
 	</body>
 </html>
+	
