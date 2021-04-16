@@ -10,7 +10,7 @@ $perPage 	= isset( $_GET['per-page'] ) && $_GET['per-page'] <= 50 ? (int) $_GET[
 $start = ( $page > 1 ) ? ( $page * $perPage ) - $perPage : 0;
 
 // query
-$articles = $db->prepare( "SELECT SQL_CALC_FOUND_ROWS * FROM articles LIMIT {$start},{$perPage}" );
+$articles = $db->prepare( "SELECT SQL_CALC_FOUND_ROWS * FROM articles LIMIT {$start}, {$perPage}" );
 $articles->execute();
 $articles = $articles->fetchAll( PDO::FETCH_ASSOC );
 
