@@ -3,8 +3,8 @@
 $db = new PDO( 'mysql:dbname=pagination;host=127.0.0.1','root','' );
 
 // user input
-$page 		= isset( $_GET['page'] ) ? (int) $_GET['page'] : 1;
-$perPage 	= isset( $_GET['per-page'] ) && $_GET['per-page'] <= 50 ? (int) $_GET['per-page'] : 5;
+$page 	 = isset( $_GET['page'] ) ? (int) $_GET['page'] : 1;
+$perPage = isset( $_GET['per-page'] ) && $_GET['per-page'] <= 50 ? (int) $_GET['per-page'] : 5;
 
 // positioning
 $start = ( $page > 1 ) ? ( $page * $perPage ) - $perPage : 0;
